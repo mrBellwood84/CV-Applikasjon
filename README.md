@@ -16,6 +16,8 @@ _Gjelder alt som er lagt til etter opprettelse av prosjekt med npx create-react-
 
 - [__Boostrap for React__](https://react-bootstrap.github.io/) : CSS rammeverk
 - [__Sass__](https://sass-lang.com/) : CSS Preprossessor
+- [__MobX__](https://mobx.js.org/README.html) : State management for Reactinst
+
 
 ## Verktøy
 

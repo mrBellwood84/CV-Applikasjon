@@ -15,7 +15,7 @@ const NavBar = () => {
     return (
         <div className="navbarContainer">
             <NavLink 
-                content="Søknadsbrev" 
+                content="Søknad" 
                 tooltiptxt="Søknadsbrev"
                 click={validLetter}
                 />

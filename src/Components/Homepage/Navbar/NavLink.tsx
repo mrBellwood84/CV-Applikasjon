@@ -5,9 +5,10 @@ import './navbar.scss'
 interface IProps{
     content:string;
     tooltiptxt: string;
+    click: () => void;
 }
 
-const NavLink: React.FC<IProps> = ({content, tooltiptxt}) => {
+const NavLink: React.FC<IProps> = ({content, tooltiptxt, click}) => {
 
     return (
         <OverlayTrigger
@@ -21,7 +22,8 @@ const NavLink: React.FC<IProps> = ({content, tooltiptxt}) => {
             }>
 
 
-            <div className="navlink">
+            <div className="navlink"
+                onClick={click}>
                 {`<${content}/>`}
             </div>
         </OverlayTrigger>

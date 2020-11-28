@@ -3,7 +3,7 @@ import {Button} from 'react-bootstrap'
 import { useContext } from 'react'
 import { rootStoreContext } from '../../Stores/rootStore'
 import '../../Styling/common.scss'
-import '../../Styling/loadscreen.scss'
+import './loadscreen.scss'
 
 
 /** Oppstartskomponent for applikasjon. Gir muligheten for å dekrypterer innhold fra søknadsbrev */

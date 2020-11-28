@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { Fragment } from 'react'
+import NavBar from './Navbar/NavBar';
 
 const Homepage = () => {
     return (
-        <div>
-            Dette er hovedsiden
-        </div>
+        <Fragment>
+            <NavBar />
+        </Fragment>
     )
 }
 

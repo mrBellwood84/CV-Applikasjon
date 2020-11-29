@@ -18,8 +18,31 @@
 
     .noContentText {
         color: $bgDark;
-        font-size: 20px;
-        font-weight: 800;
+        text-shadow: yellow 0 0 2px;
+        font-size: 32px;
+        font-weight: 900;
         cursor: default;
+    }
+
+}
+
+.noContentContanerLight {
+    display: flex;
+    align-items: center;
+
+    height: 100%;
+    width: 600px;
+
+    .noContentTextLight{
+        color: $fgDark;
+        text-shadow: yellow 0 0 2px;
+        font-weight: 900;
+        font-size: 20px;
+
+        padding: 20px;
+        margin-left: 100px;
+
+        border: rgba(255, 255, 0, 0.5) 1px dotted;
+        border-radius: 20px;
     }
 }

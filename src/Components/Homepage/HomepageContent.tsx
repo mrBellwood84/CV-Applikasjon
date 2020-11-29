@@ -1,9 +1,9 @@
 import { observer } from "mobx-react-lite"
-import { useContext } from "react";
+import React, { useContext } from "react";
 import { rootStoreContext } from "../../Stores/rootStore";
 import CvMain from "./CvComponent/CvMain";
 import LetterMain from "./LetterComponent/LetterMain";
-import NoContent from "./NoContent";
+import NoContentDark from "./NoContentDark";
 
 const HomepageContent = () => {
 
@@ -20,7 +20,7 @@ const HomepageContent = () => {
 
         default:
             return (
-                <NoContent />
+                <NoContentDark />
             )
     }
 }

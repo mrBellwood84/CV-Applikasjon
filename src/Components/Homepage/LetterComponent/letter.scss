@@ -1,23 +1,16 @@
 @import '../../../Styling/common.scss';
 
 .letterContainer {
-    display: flex;
+    @include ContentContainer;
+
     flex-direction: column;
+    justify-content: start;
 
     position: absolute;
     overflow-y: scroll;
     overflow-x: hidden;
 
-    width: 800px;
-    height: 700px;
-
-    top: 100px;
-    left: 50%;
-    transform: translateX(-50%);
-
     background-color: $bgDark;
-    border-radius: 20px;
-    box-shadow: black 1px 1px 1px;
 
 
     .letterInner{

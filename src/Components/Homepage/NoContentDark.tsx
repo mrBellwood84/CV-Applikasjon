@@ -1,16 +1,15 @@
-
 import { observer } from 'mobx-react-lite'
 import './homepage.scss'
 
-const NoContent = () => {
+const NoContentDark = () => {
 
     return (
         <div className="noContentContaier">
             <div className="noContentText">
-                Velg innhold...
+                TRYKK PÅ EN LINK
             </div>
         </div>
     )
 }
 
-export default observer(NoContent)
+export default observer(NoContentDark)

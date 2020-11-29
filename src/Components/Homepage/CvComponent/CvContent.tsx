@@ -1,6 +1,7 @@
 import { observer } from "mobx-react-lite"
 import { useContext } from "react"
 import { rootStoreContext } from "../../../Stores/rootStore"
+import NoContentLight from "../NoContentLight";
 import CvEducationItem from "./CvEducationItem";
 import CvJobItem from "./CvJobItem";
 import CvOtherItem from "./CvOtherItem";
@@ -49,7 +50,7 @@ const CvContent = () => {
         default:
             return (
                 <div>
-                    No view
+                    <NoContentLight />
                 </div>
             )
     }

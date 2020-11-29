@@ -1,6 +1,6 @@
 
 import { observer } from 'mobx-react-lite'
-import './nocontent.scss'
+import './homepage.scss'
 
 const NoContent = () => {
 

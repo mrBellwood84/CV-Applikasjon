@@ -6,3 +6,66 @@
     justify-content: center;
     margin: 20px;
 }
+
+// Content container for page content
+@mixin ContentContainer {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 800px;
+    height: 700px;
+
+    border: $bgDark 2px solid;
+    border-radius: 20px;
+    box-shadow: black 1px 1px 1px;
+}
+
+// Pagelinks for innholds container
+@mixin PageLinkContainer {
+    width: 200px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+// link style for pagelings
+@mixin PageLink {
+    text-align: right;
+    padding: 10px;
+    cursor: pointer;
+    color: $linkColor;
+    transition: 0.2s;
+
+    &:hover {
+        background-color: $fgDark;
+        color: $linkHover;
+    }
+}
+
+@mixin PageInfoContent {
+    width: 600px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: default;
+}
+
+
+/* Mørkeste farge */
+$bgDark: #121212;
+
+/* Mørk Bakgrunn*/
+$fgDark: #272727;
+
+/* Tekstfarge */
+$txtColor:  rgba(230, 200, 0, 0.8);
+
+/* Link farge */
+$linkColor: rgba(230, 200, 0, 0.6);
+
+/* link hover color*/
+$linkHover: rgba(230, 200, 0, 0.9)

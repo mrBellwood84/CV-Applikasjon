@@ -1,0 +1,25 @@
+@import '../../Styling/common.scss';
+
+.homepageContentContainer {
+    height: calc(100vh - 50px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: 50px;
+}
+
+.noContentContaier {
+
+    @include ContentContainer;
+
+    flex-direction: row;
+
+    opacity: 0.6;
+
+    .noContentText {
+        color: $bgDark;
+        font-size: 20px;
+        font-weight: 800;
+        cursor: default;
+    }
+}

@@ -9,7 +9,11 @@ const Homepage = () => {
     return (
         <Fragment>
             <NavBar />
-            <HomepageContent />
+
+            <div className="homepageContentContainer">
+                <HomepageContent />
+            </div>
+            
         </Fragment>
     )
 }

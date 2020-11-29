@@ -8,6 +8,12 @@ interface IProps{
     click: () => void;
 }
 
+/** NavLink element 
+ * @param content - link text
+ * @param tooltiptxt - text tooltip
+ * @param click - funksjonsutrykk for clickevent
+ */
+
 const NavLink: React.FC<IProps> = ({content, tooltiptxt, click}) => {
 
     return (
@@ -20,7 +26,6 @@ const NavLink: React.FC<IProps> = ({content, tooltiptxt, click}) => {
                     {tooltiptxt}
                 </Tooltip>
             }>
-
 
             <div className="navlink"
                 onClick={click}>

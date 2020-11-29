@@ -1,5 +1,5 @@
 import { observer } from "mobx-react-lite";
-import { ICvEductationItem } from "../../../Models/CvModels";
+import { ICvEductationItem } from "../../../Models/ICv";
 
 interface IProps {
     educationItem: ICvEductationItem

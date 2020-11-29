@@ -1,5 +1,5 @@
 import { observer } from "mobx-react-lite"
-import { ICvJobItem } from "../../../Models/CvModels"
+import { ICvJobItem } from "../../../Models/ICv"
 import './cv.scss'
 
 interface IProps {

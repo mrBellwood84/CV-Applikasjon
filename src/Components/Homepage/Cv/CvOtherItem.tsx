@@ -1,5 +1,5 @@
 import { observer } from "mobx-react-lite";
-import { ICvOther } from "../../../Models/CvModels";
+import { ICvOther } from "../../../Models/ICv";
 
 interface IProps
 {

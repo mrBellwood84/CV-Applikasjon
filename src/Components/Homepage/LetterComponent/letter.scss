@@ -4,7 +4,7 @@
     @include ContentContainer;
 
     flex-direction: column;
-    justify-content: start;
+    justify-content: flex-start;
 
     position: absolute;
     overflow-y: scroll;

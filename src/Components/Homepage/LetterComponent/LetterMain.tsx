@@ -1,6 +1,6 @@
 import { observer } from "mobx-react-lite"
 import { useContext } from "react"
-import { RootStore, rootStoreContext } from "../../../Stores/rootStore"
+import { rootStoreContext } from "../../../Stores/rootStore"
 import './letter.scss'
 
 const LetterMain = () => {
@@ -18,7 +18,7 @@ const LetterMain = () => {
                 <div className="letterContent">
                     {Letter?.content && Letter.content.length > 0 && (
                         Letter.content.map(para => (
-                            <p> {para} </p>
+                            <p key={Letter.content.indexOf(para)}> {para} </p>
                         ))
                     ) }
                 </div>

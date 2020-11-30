@@ -1,0 +1,15 @@
+@import '../../../Styling/common.scss';
+
+.personContainer {
+    @include ContentContainer;
+    background-color: $bgDark;
+
+    .personLinkContainer {
+        @include PageLinkContainer;
+    }
+
+    .personContentContainer {
+        @include PageInfoContent;
+    }
+
+}

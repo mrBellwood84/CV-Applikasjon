@@ -1,0 +1,15 @@
+@import '../../../Styling/common.scss';
+
+.toolContainer {
+    @include ContentContainer;
+    background-color: $bgDark;
+
+    .toolLinkContainer{
+        @include PageLinkContainer;
+    }
+
+    .toolContentContainer {
+        @include PageInfoContent;
+
+    }
+}

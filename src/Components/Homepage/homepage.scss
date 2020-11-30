@@ -23,7 +23,6 @@
         font-weight: 900;
         cursor: default;
     }
-
 }
 
 .noContentContanerLight {
@@ -31,7 +30,7 @@
     align-items: center;
 
     height: 100%;
-    width: 600px;
+    width: 550px;
 
     .noContentTextLight{
         color: $fgDark;
@@ -45,4 +44,9 @@
         border: rgba(255, 255, 0, 0.5) 1px dotted;
         border-radius: 20px;
     }
+}
+
+
+.pageContentLink {
+    @include PageLink
 }

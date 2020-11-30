@@ -1,0 +1,15 @@
+@import '../../../Styling/common.scss';
+
+.projectContainer {
+    @include ContentContainer;
+    background-color: $bgDark;
+
+    .projectLinkContainer {
+        @include PageLinkContainer;
+    }
+
+    .projectContentContainer {
+        @include PageInfoContent;
+    }
+
+}

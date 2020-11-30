@@ -10,26 +10,24 @@ const LetterMain = () => {
 
     return (
         <div className="letterContainer">
-            <div className="letterInner">
 
-                <div className="letterHead">
-                    {Letter?.title}
-                </div>
-                <div className="letterContent">
-                    {Letter?.content && Letter.content.length > 0 && (
-                        Letter.content.map(para => (
-                            <p key={Letter.content.indexOf(para)}> {para} </p>
-                        ))
-                    ) }
-                </div>
-                <div className="letterGreeting">
-                    {Letter?.greeting}
-                </div>
-                <div className="letterSignature">
-                    {Letter?.signature}
-                </div>
+            <h4 className="pageHeader"> {Letter?.title} </h4>
+
+            {Letter?.content && Letter.content.map(x => (
+                <p className="pageParagraph"
+                    key = {`ltrcntkey${Letter.content.indexOf(x)}`}>
+                    {x}
+                </p>            
+            ))}
+
+            <p className="letterRegards">
+                {Letter?.greeting}
+            </p>
+
+            <p className="letterSignature">
+                {Letter?.signature}
+            </p>
                 
-            </div>
         </div>
     )
 }

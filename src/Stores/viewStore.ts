@@ -1,4 +1,8 @@
 import { action, makeObservable, observable } from "mobx";
+import { ILanguage } from "../Models/ILanguage";
+import { IPerson, IPersonContactInfo, IPersonInfo } from "../Models/IPerson";
+import { IProject } from "../Models/IProject";
+import { ITools } from "../Models/ITools";
 import { RootStore } from "./rootStore";
 
 export class ViewStore
@@ -18,6 +22,58 @@ export class ViewStore
     /** String keyword for content switch i CvContent */
     @observable
     cvView: string | undefined;
+    /** bestemmer view i cv info container */
+    @action
+    setCvView = (view: string) => {
+        this.cvView = view;
+    }
+
+    /** Setter language view til komponent */
+    @observable
+    langView: ILanguage | undefined;
+    @action
+    setLangView = (view: ILanguage) =>
+    {
+        this.langView = view;
+    }
+
+    /** Setter prosjekt view */
+    @observable
+    projectView: IProject | undefined;
+    @action
+    setProjectView = (view: IProject) => 
+    {
+        this.projectView = view;
+    }
+
+    /** Setter tools view */
+    @observable
+    toolView: ITools | undefined;
+    @action
+    setToolView = (view: ITools) =>
+    {
+        this.toolView = view;
+    }
+
+    /** setter variabel for contact info */
+    @observable
+    contactInfoView: IPersonContactInfo | undefined
+    @action
+    setContactInfoView = (view: IPersonContactInfo) => 
+    {
+        this.personInfoView = undefined;
+        this.contactInfoView = view;
+    }
+
+    @observable
+    personInfoView: IPersonInfo | undefined;
+    @action
+    setPersonInfoView = (view: IPersonInfo) =>
+    {
+        this.contactInfoView = undefined;
+        this.personInfoView = view;
+    }
+
 
 
     /** Sjekker om søknadsbrev finnes,  setter keyword for switch */
@@ -69,10 +125,4 @@ export class ViewStore
         this.viewController = view;
     }
 
-
-    /** bestemmer view i cv info container */
-    @action
-    setCvView = (view: string) => {
-        this.cvView = view;
-    }
 }

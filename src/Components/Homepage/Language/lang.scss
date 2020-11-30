@@ -1,0 +1,15 @@
+@import '../../../Styling/common.scss';
+
+.langContainer {
+    @include ContentContainer;
+    background-color: $bgDark;
+
+    .langLinkContainer{
+        @include PageLinkContainer;
+    }
+
+    .langContentContainer {
+        @include PageInfoContent;
+
+    }
+}

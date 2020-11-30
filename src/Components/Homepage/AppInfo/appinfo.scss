@@ -1,8 +1,8 @@
 @import '../../../Styling/common.scss';
 
-.letterContainer {
+.appInfoContainer {
     @include ContentContainer;
-
+    
     background-color: $bgDark;
 
     flex-direction: column;
@@ -11,7 +11,7 @@
 
     overflow-y: scroll;
     overflow-x: hidden;
-
+    
     &::-webkit-scrollbar{
         display: none;
     }
@@ -27,16 +27,4 @@
         margin-left: 50px;
         width: 500px;
     }
-
-    .letterRegards {
-        margin-top: 20px;
-        margin-bottom: 5px;
-        font-size: 14px;
-        font-style: italic;
-    }
-
-    .letterSignature {
-        font-weight: 600;
-    }
-
 }

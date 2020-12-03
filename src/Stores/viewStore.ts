@@ -1,6 +1,6 @@
 import { action, makeObservable, observable } from "mobx";
 import { ILanguage } from "../Models/ILanguage";
-import { IPerson, IPersonContactInfo, IPersonInfo } from "../Models/IPerson";
+import { IPersonContactInfo, IPersonInfo } from "../Models/IPerson";
 import { IProject } from "../Models/IProject";
 import { ITools } from "../Models/ITools";
 import { RootStore } from "./rootStore";
@@ -14,6 +14,16 @@ export class ViewStore
 
         makeObservable(this);
     }
+
+    /** kontrollerer modal for dekryptering */
+    @observable
+    showDecryptModal: boolean = false;
+    @action
+    setShowDecryptModal = (showModal:boolean) => 
+    {
+        this.showDecryptModal = showModal;
+    }
+
 
     /** String er keyword for switch i HomepageContent */
     @observable

@@ -1,25 +1,15 @@
-import { makeObservable, observable, action } from "mobx";
+import { makeObservable, observable, action, runInAction } from "mobx";
 import { ICv } from "../Models/ICv";
 import { ILanguage } from "../Models/ILanguage";
 import { ILetter } from "../Models/ILetter";
-import { CvConstructor } from "../_Dev_Folder/CvConstructor";
-import { LanguageConstructor } from "../_Dev_Folder/langConstructor";
-import { LetterConstructor } from "../_Dev_Folder/letterConstructor";
-import { ProjectConstructor } from "../_Dev_Folder/projectConstructor";
-import { ToolsContructor } from "../_Dev_Folder/toolsConstructor";
-import { PersonConstructor } from "../_Dev_Folder/personConstructor"
+import { decryptText } from "../Utils/encryption";
+import { IData } from "../Models/IData";
+import { IProject } from "../Models/IProject";
+import { ITools } from "../Models/ITools";
+import { IPerson } from "../Models/IPerson";
+import { IAppInfo } from "../Models/IAppInfo";
 import { RootStore } from "./rootStore";
-import { AppInfoConstructor } from "../_Dev_Folder/appInfoConstructor";
 
-
-// --DEV, lokale objecter for testing og utvikling
-const cv = new CvConstructor();
-const letter = new LetterConstructor();
-const lang = new LanguageConstructor();
-const project = new ProjectConstructor();
-const tools = new ToolsContructor();
-const person = new PersonConstructor();
-const appInfo = new AppInfoConstructor();
 
 /** Klasse for alle LoadScreen variabler */
 // eksporter klass esom default
@@ -39,52 +29,62 @@ export default class DataStore {
         makeObservable(this);
     }
 
+
     /** Sann dersom innhold er lastet inn */
-    // --DEV: Sett til falsk før produksjon
     @observable 
-    dataIsValid: boolean = true;
+    dataIsValid: boolean = false
 
     /** Inneholder søknadsbrev */
-    // --DEV Brev lokalkt importert
     @observable
-    Letter?: ILetter = letter.exportLetterObject();
+    Letter?: ILetter | undefined = undefined;
 
     /** Inneholder CvObjekt */
-    // --DEV CV LOKALT IMPORTERT!!!
     @observable
-    CvData?: ICv = cv.exportCvJson();
+    CvData?: ICv | undefined = undefined;
 
     /** inneholder prog.lang objekter */
-    // --DEV => liste importert lokalt
     @observable
-    languageData?: ILanguage[] = lang.exportObjArray();
+    languageData?: ILanguage[] | undefined = undefined;
 
     /** inneholder data om prosjekter */
-    // --DEV => Lokalt importert
     @observable
-    projectData? = project.exportProjectsArr();
+    projectData?: IProject[] | undefined = undefined;
 
     /** inneholder data om verktøy */
-    // --DEV => Lokalt importert
     @observable
-    toolsData? = tools.exportToolsArray();
+    toolsData?: ITools[] | undefined = undefined;
 
     /** inneholder data om kontaktinformasjon og personlige trekk */
-    // --DEV => Lokalt importert
     @observable
-    personData? = person.exportPerson();
+    personData?: IPerson | undefined = undefined;
 
     /** inneholder informasjon om denne applikasjonen */
-    // --DEV => Lokalt importert
     @observable
-    appInfoData? = appInfo.exportAppInfo();
+    appInfoData?: IAppInfo | undefined = undefined;
 
-    /** Setter gyldig data bool som sann */
-    @action 
-    setDataIsValid = () => 
-    {
+
+    /** setter applikasjonsdata fra  */
+    @action
+    loadSessionStorageData = () => {
+        runInAction(() => {
+            let key = sessionStorage.getItem("KEY");
+            let encrypted = sessionStorage.getItem("DATA");
+            let datastring = decryptText(encrypted!, key!);
+            let data:IData = JSON.parse(datastring);
+
+            this.Letter = data.letter;
+            this.CvData = data.cv;
+            this.languageData = data.languages;
+            this.projectData = data.projects;
+            this.toolsData = data.tools;
+            this.personData = data.person;
+            this.appInfoData = data.appInfo;
+        });
+
         this.dataIsValid = true;
     }
+
+
 }
 
 

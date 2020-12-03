@@ -1,8 +1,10 @@
 import { observer } from 'mobx-react-lite';
-import React, { useContext } from 'react';
+import React, { Fragment, useContext, useEffect } from 'react';
 import LoadScreen from './LoadScreen/LoadScreen';
 import { rootStoreContext } from '../Stores/rootStore';
 import Homepage from './Homepage/Homepage';
+import DecryptModal from './DecryptModal/DecryptModal';
+import { encryptedMessage } from '../_Dev_Folder/exportData';
 
 /** Hovedkomponent for applikasjon */
 const App = () => {
@@ -10,18 +12,37 @@ const App = () => {
   // laster inn rootStore som React Context
   const rootStore = useContext(rootStoreContext);
   // boolsk verdi for gyldig opplastning av data
-  const {dataIsValid} = rootStore.dataStore;
+  const {dataIsValid, loadSessionStorageData } = rootStore.dataStore;
+
+  // --DEV => exporter data;
+  let myData = encryptedMessage();
+  console.log(myData);
+
+
+  useEffect(() => {
+    let key = sessionStorage.getItem("KEY");
+    let txt = sessionStorage.getItem("DATA");
+
+    if (key && txt)
+    {
+      loadSessionStorageData();
+    } 
+
+  },[loadSessionStorageData])
 
   // last inn loadscreen dersom data ikke er gyldig
   if (!dataIsValid) {
     return (
-      <LoadScreen />
+      <Fragment>
+        <LoadScreen />
+        <DecryptModal />
+      </Fragment>
     )
   }
 
   // laster inn hovedsiden dersom data er gyldig
   return (
-    <Homepage />
+      <Homepage />
   )
 }
 

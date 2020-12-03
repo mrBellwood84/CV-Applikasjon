@@ -1,5 +1,5 @@
 import { observer } from 'mobx-react-lite'
-import {Button} from 'react-bootstrap'
+import { Button } from 'react-bootstrap'
 import { useContext } from 'react'
 import { rootStoreContext } from '../../Stores/rootStore'
 import '../../Styling/common.scss'
@@ -9,19 +9,23 @@ import './loadscreen.scss'
 /** Oppstartskomponent for applikasjon. Gir muligheten for å dekrypterer innhold fra søknadsbrev */
 const LoadScreen = () => {
 
-    const rootStore = useContext(rootStoreContext);
-    const { setDataIsValid } = rootStore.dataStore
+    const rootStore = useContext(rootStoreContext)
+    const { setShowDecryptModal } = rootStore.viewStore;
 
     return (
         <div className="loadScreenContainer">
             <div className="contentContainer">
-                <h2>Velkommen</h2>
-                <h4>til Kristians CV applikasjon</h4>
-                <p>Jeg antar du har beveget deg inn hit fordi du har mottatt en merkelig søknad.</p>
-                <p>Trykk "Dekrypter" nedenfor for å få tilgang på innholdet i teksten.</p>
-                <div className="buttonContaier">
-                    <Button variant="outline-warning" onClick={() => {setDataIsValid()}} >Dekrypter</Button>{' '}
-                </div>
+                <h4 className="pageHeader">Velkommen</h4>
+                <p className="pageParagraph">Du har sikkert kommet hit fordi du fikk en link via en epost.</p>
+                <p className="pageParagraph">Vel, Her skjer det ikke stort mer, sånn med det første...</p>
+                <p className="pageParagraph">I samme epost skal det følge med et passord og en txt fil med kryptert innhold.</p>
+                <p className="pageParagraph">Mitt tips er å trykke på knappen nedenfor for å dekryptere teksten.</p>
+                <Button 
+                    className="buttonDecrypt" 
+                    variant="outline-warning"
+                    onClick={() => setShowDecryptModal(true)} >
+                        Dekrypter
+                    </Button>
             </div>
         </div>
     )

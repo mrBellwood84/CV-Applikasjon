@@ -12,7 +12,7 @@ Jeg syns det virket som en artig ide å sende en kryptert txt fil som jobbsøkna
  - Meg (kontaktinformasjon og generelt om undertegnede)
  - Om applikasjonen
 
-Det er også muligheter for å eksportere data til et PDF dokument
+Det er også muligheter for å eksportere data til et PDF dokument.
 
 
 ## Om applikasjonen
@@ -27,6 +27,7 @@ Dette er min første React applikasjon. Det er også første gang jeg prøver me
 - [__Sass__](https://sass-lang.com/) : CSS Preprossessor
 - [__MobX__](https://mobx.js.org/README.html) : State management for Reactinst
 - [__Crypto-JS__](https://cryptojs.gitbook.io/docs/) : Kryptering av data
+- [__React PDF__](https://react-pdf.org/) : For eksportering av data til PDF dokument
 
 
 ### Verktøy

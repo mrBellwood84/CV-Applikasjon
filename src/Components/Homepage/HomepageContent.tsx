@@ -1,6 +1,8 @@
+import { PDFViewer } from "@react-pdf/renderer";
 import { observer } from "mobx-react-lite"
 import React, { useContext } from "react";
 import { rootStoreContext } from "../../Stores/rootStore";
+import CvPdf from "../PDF/CvPdf";
 import AppInfoMain from "./AppInfo/AppInfoMain";
 import CvMain from "./Cv/CvMain";
 import LanguageMain from "./Language/LanguageMain";
@@ -41,6 +43,14 @@ const HomepageContent = () => {
         
         case "appdata":
             return (<AppInfoMain />)
+        case "pdf":
+            return (
+                <PDFViewer
+                    height={"100%"}
+                    width={"100%"}>
+                    <CvPdf />
+                </PDFViewer>
+            )
 
         default:
             return (

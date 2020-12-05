@@ -27,7 +27,6 @@
     .navlink {
         cursor: pointer;
         padding: 10px 20px;
-        float: left;
         font-size: 18px;
         text-align: center;
         color: $linkColor;
@@ -38,6 +37,10 @@
         &:hover {
             background-color: $fgDark;
             color: $linkHover;
+        }
+
+        &:last-child {
+            margin-left: auto;
         }
     }
 }

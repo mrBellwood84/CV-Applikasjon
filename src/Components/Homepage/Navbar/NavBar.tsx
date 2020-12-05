@@ -3,6 +3,7 @@ import NavLink from './NavLink'
 import './navbar.scss'
 import { useContext } from 'react';
 import { rootStoreContext } from '../../../Stores/rootStore';
+import { Right } from 'react-bootstrap/lib/Media';
 
 /** Navigasjonskomponent for applikasjon. Knappene bruker click funksjon fra "viewStore.ts" for å verifisere innhold. 
  * Dersom innhold er verifisert, vil innholdskomponenten oppdateres*/
@@ -19,7 +20,8 @@ const NavBar = () => {
         validProject,
         validTools,
         validPerson,
-        validAppInfo    
+        validAppInfo,
+        viewPDF
     } = rootStore.viewStore;
 
 
@@ -54,7 +56,10 @@ const NavBar = () => {
                 content="Om Appen"
                 tooltiptxt="Informasjon om denne applikasjonen"
                 click={validAppInfo} />
-
+            <NavLink
+                content="PDF"
+                tooltiptxt="Eksporter data til PDF"
+                click={viewPDF} />
         </div>
     )
 

@@ -83,8 +83,7 @@ export class ViewStore
         this.contactInfoView = undefined;
         this.personInfoView = view;
     }
-
-
+    
 
     /** Sjekker om søknadsbrev finnes,  setter keyword for switch */
     @action
@@ -133,6 +132,11 @@ export class ViewStore
     validAppInfo = () => {
         let view = this.rootStore.dataStore.appInfoData ? "appdata" : undefined;
         this.viewController = view;
+    }
+
+    @action viewPDF = () => 
+    {
+        this.viewController = "pdf";
     }
 
 }

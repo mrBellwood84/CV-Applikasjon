@@ -108,4 +108,33 @@ $txtColor:  rgba(230, 200, 0, 0.8);
 $linkColor: rgba(230, 200, 0, 0.6);
 
 /* link hover color*/
-$linkHover: rgba(230, 200, 0, 0.9)
+$linkHover: rgba(230, 200, 0, 0.9);
+
+.notResponsive {
+    background-color: $bgDark;
+    color: $txtColor;
+    z-index: 999;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    display: none;
+
+    p {
+        text-align: center;
+        font-size: medium;
+        margin: 10px 20px;
+        max-width: 500px;
+    }
+
+    h4 {
+        margin-bottom: 10px;
+        border-bottom: $txtColor 1px dotted;
+    }
+
+    @media (max-width: 1099px), (max-height: 749px)   {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+}

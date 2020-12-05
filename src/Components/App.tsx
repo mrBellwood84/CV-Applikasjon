@@ -5,6 +5,7 @@ import { rootStoreContext } from '../Stores/rootStore';
 import Homepage from './Homepage/Homepage';
 import DecryptModal from './DecryptModal/DecryptModal';
 import { encryptedMessage } from '../_Dev_Folder/exportData';
+import NotResponsive from './NotResponsive';
 
 /** Hovedkomponent for applikasjon */
 const App = () => {
@@ -34,6 +35,7 @@ const App = () => {
   if (!dataIsValid) {
     return (
       <Fragment>
+        <NotResponsive />
         <LoadScreen />
         <DecryptModal />
       </Fragment>
@@ -42,7 +44,10 @@ const App = () => {
 
   // laster inn hovedsiden dersom data er gyldig
   return (
+    <Fragment>
+      <NotResponsive />
       <Homepage />
+    </Fragment>
   )
 }
 

@@ -4,7 +4,7 @@ import LoadScreen from './LoadScreen/LoadScreen';
 import { rootStoreContext } from '../Stores/rootStore';
 import Homepage from './Homepage/Homepage';
 import DecryptModal from './DecryptModal/DecryptModal';
-import { encryptedMessage } from '../_Dev_Folder/exportData';
+// import { encryptedMessage } from '../_Dev_Folder/exportData';
 import NotResponsive from './NotResponsive';
 
 /** Hovedkomponent for applikasjon */
@@ -16,8 +16,8 @@ const App = () => {
   const {dataIsValid, loadSessionStorageData } = rootStore.dataStore;
 
   // --DEV => exporter data;
-  let myData = encryptedMessage();
-  console.log(myData);
+  // let myData = encryptedMessage();
+  // console.log(myData);
 
 
   useEffect(() => {

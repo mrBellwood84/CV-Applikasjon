@@ -1,5 +1,9 @@
 # CV-Applikasjon
 
+## UTFASET
+
+Har et nytt tilsvarende prosjekt på gang
+
 ### Applikasjon for CV og Jobbsøknad
 
 Jeg syns det virket som en artig ide å sende en kryptert txt fil som jobbsøknad. For tilgang til innholdet i dokumentet må teksten dekrypteres i denne applikasjonen. Dekrypteringen leder til en singlepage som viser følgende informasjon:
